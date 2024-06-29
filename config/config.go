@@ -22,8 +22,17 @@ func InitConfig() {
 	}
 
 	openAIApiKey := os.Getenv("OPEN_AI_API_KEY")
+	if openAIApiKey == "" {
+		log.Fatal("OPEN_AI_API_KEY is not set in .env file")
+	}
 	memosBaseURL := os.Getenv("MEMOS_BASE_URL")
+	if memosBaseURL == "" {
+		log.Fatal("MEMOS_BASE_URL is not set in .env file")
+	}
 	memosAPIKey := os.Getenv("MEMOS_API_KEY")
+	if memosAPIKey == "" {
+		log.Fatal("MEMOS_API_KEY is not set in .env file")
+	}
 
 	ConfigInstance = Config{
 		OpenAIAPIKey: openAIApiKey,
