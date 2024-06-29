@@ -20,16 +20,17 @@ This project integrates MEMOS, an open-source note-taking service, with OpenAI's
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/yourgithubusername/memos-openai-integration.git
-   cd memos-openai-integration
+   git clone https://github.com/morgansundqvist/memosgpt.git
+   cd memosgpt
    ```
 
 2. **Set up your environment variables:**
    Create a `.env` file in the project root and update it with your OpenAI API key and MEMOS webhook secret.
 
    ```plaintext
-   OPENAI_API_KEY="your-openai-api-key-here"
-   MEMOS_WEBHOOK_SECRET="your-memos-webhook-secret"
+    OPENAI_API_KEY="your-openai-api-key-here"
+    MEMOS_BASE_URL="http://localhost:5230"
+    OPEN_AI_API_KEY="your-memos-api-key"
    ```
 
 3. **Build the project:**
@@ -40,14 +41,12 @@ This project integrates MEMOS, an open-source note-taking service, with OpenAI's
 
 4. **Run the service:**
    ```bash
-   ./memos-openai-integration
+   ./memosgpt
    ```
 
 ## Configuration
 
-- **OpenAI Settings**: You can adjust the model and other parameters used for querying OpenAI by modifying the configuration file located at `config/openai.json`.
-
-- **Webhook Endpoint**: Ensure the webhook endpoint in MEMOS is set to the URL where this service is running, typically `http://yourserver.com/webhook`.
+- **Webhook Endpoint**: Ensure the webhook endpoint in MEMOS is set to the URL where this service is running, typically `http://your-ip:3214/wh`. Read more about webhooks in MEMOS here https://www.usememos.com/docs/advanced-settings/webhook
 
 ## Usage
 
@@ -60,7 +59,8 @@ Once the service is up and running, it will listen for incoming webhooks from ME
 Example Note:
 
 ```
-Here is a question about physics: /g What is the theory of relativity?
+Here is a question about physics:
+/g What is the theory of relativity?
 ```
 
 ## Contributing
@@ -69,13 +69,10 @@ Contributions are welcome! If you'd like to improve the MEMOS OpenAI Integration
 
 ## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the MIT License.
 
 ## Acknowledgments
 
 - [MEMOS](https://github.com/memos-org/memos) for the open-source note-taking platform.
 - [go-openai](https://pkg.go.dev/github.com/sashabaranov/go-openai) for providing the Golang client for OpenAI.
-
----
-
-This `README.md` is structured to provide all the essential information required for someone new to the project, explaining how to get started, configure, and use the service. Adjustments may be needed to fit the specifics of your implementation or project setup.
+- [grequests](https://github.com/levigross/grequests) for prividing a simple HTTP request package
