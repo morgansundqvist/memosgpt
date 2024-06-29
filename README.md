@@ -65,7 +65,7 @@ Here is a question about physics:
 
 ## Contributing
 
-Contributions are welcome! If you'd like to improve the MEMOS OpenAI Integration Service, please fork the repository and submit a pull request.
+Contributions are welcome! If you'd like to improve the MEMOSGPT, please fork the repository and submit a pull request.
 
 ## License
 
